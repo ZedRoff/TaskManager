@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
 
-<Header title="Home" />
+<Header title="Channel" />
     <ScrollView style={styles.centered}>
-    <Main />
+   
  </ScrollView>
 
 

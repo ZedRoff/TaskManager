@@ -5,14 +5,16 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faBox } from "@fortawesome/free-solid-svg-icons" 
 import Footer from "./Footer"
-
+import Header from "./Header"
+import Main from "./Main"
 export default function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
 
-    <ScrollView>
-
+<Header />
+    <ScrollView style={styles.centered}>
+    <Main />
  </ScrollView>
 
 
@@ -30,6 +32,16 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column"
    
-  }
+  },
+    centered: {
+        flex: 1,
+        width: "100%",
+        alignSelf: "center",
+        backgroundColor: "#2E2E2E",
+        padding: 16,
+        margin: 20,
+        borderRadius: 20,
+        color: "#fff"
+    },
   
 })

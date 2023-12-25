@@ -1,47 +1,34 @@
-import React from "react"
-import { SafeAreaView, ScrollView, StyleSheet, View, Text, Pressable } from "react-native"
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faBox } from "@fortawesome/free-solid-svg-icons" 
-import Footer from "./Footer"
-import Header from "./Header"
-import Main from "./Main"
-export default function Home() {
+import React from "react";
+import { SafeAreaView, ScrollView, StyleSheet} from "react-native";
 
+import Footer from "./Footer";
+import Header from "./Header";
+import Main from "./Main";
+
+const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
-
-<Header title="Home" />
-    <ScrollView style={styles.centered}>
-    <Main />
- </ScrollView>
-
-
-<Footer />
-
-</SafeAreaView>
-    
-  
+      <Header title="Home" />
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+        <Main />
+      </ScrollView>
+      <Footer />
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:"#2E2E2E",
     flex: 1,
-    flexDirection: "column"
-   
+    backgroundColor: "#2E2E2E",
   },
-    centered: {
-        flex: 1,
-        width: "100%",
-        alignSelf: "center",
-        backgroundColor: "#2E2E2E",
-        padding: 16,
-        margin: 20,
-        borderRadius: 20,
-        color: "#fff"
-    },
-  
-})
+  scrollViewContent: {
+    flexGrow: 1,
+    padding: 16,
+    margin: 20,
+    borderRadius: 20,
+    backgroundColor: "#2E2E2E",
+  },
+});
+
+export default Home;

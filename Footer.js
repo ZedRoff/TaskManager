@@ -1,43 +1,37 @@
-import React from "react"
-import { SafeAreaView, ScrollView, StyleSheet, View, Text, Pressable } from "react-native"
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faBox } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "react-router-native"
-export default function Footer() {
-   
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHome, faBox } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-native";
 
+const Footer = () => {
     return (
         <View style={styles.footer}>
             <Link to="/">
-                <FontAwesomeIcon icon={faHome} style={styles.header_element} size={25} />
+                <FontAwesomeIcon icon={faHome} style={styles.icon} size={25} />
             </Link>
 
-            <Link to="/channel"> 
-                <FontAwesomeIcon icon={faBox} style={styles.header_element} size={25} />
-            </Link>
-
-            <Link to="/login">
-                <FontAwesomeIcon icon={faUser} style={styles.header_element} size={25} />
+            <Link to="/tasks"> 
+                <FontAwesomeIcon icon={faBox} style={styles.icon} size={25} />
             </Link>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     footer: {
-        backgroundColor:"#E2E2E2",
-        height:50,
+        backgroundColor: "#E2E2E2",
+        height: 50,
         alignSelf: "flex-end",
         width: "100%",
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center"
     },
-    header_element: {
+    icon: {
         color: "#2E2E2E",
         fontWeight: "bold"
     }
-})
-      
+});
+
+export default Footer;
